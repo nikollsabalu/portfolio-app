@@ -1,0 +1,293 @@
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.linkActive::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #EB4A4A;
+  z-index: -1;
+
+}
+
+.toolbar-button {
+  margin-left: 5px;
+}
+
+.menu-toogle-button {
+  background: transparent;
+}
+
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background: rgb(235, 74, 74, 0.5);
+}
+
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+  background: #EB4A4A;
+}
+
+::ng-deep .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {
+  background: rgb(235, 74, 74, 0.5);
+}
+
+// Dark Theme
+:host ::ng-deep .dark-toolbar.p-toolbar {
+  position: fixed;
+  border: 0px;
+  width: 100%;
+  z-index: 100;
+  background: #0E1630;
+  padding: 0px 15px;
+  box-shadow: 2px 2px 15px 5px rgba(131, 131, 131, 0.1);
+
+  h5,
+  i,
+  a {
+    color: white;
+  }
+}
+
+:host ::ng-deep .dark-button.p-button {
+  background: transparent;
+
+  .p-button-label {
+    color: #FBC02D;
+  }
+}
+
+:host ::ng-deep .dark-menuButton.p-button {
+  color: white;
+  background: transparent;
+}
+
+:host ::ng-deep .dark-menuButton.p-menu {
+  background: #0E1630;
+  border: none;
+
+  .p-submenu-header {
+    display: none;
+  }
+
+  .p-menuitem-text {
+    color: white;
+  }
+
+  .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+    color: #EB4A4A;
+  }
+
+  .p-menuitem-icon {
+    color: white;
+  }
+
+  .p-menu-item {
+    width: 100%;
+  }
+}
+
+:host ::ng-deep .dark-menuButton.p-sidebar {
+  background: #0E1630;
+
+  .p-sidebar-header {
+    color: #9e9e9e;
+    background: #0E1630;
+  }
+
+  .p-sidebar-close-icon {
+    color: white;
+  }
+
+  .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+    color: #EB4A4A;
+  }
+}
+
+:host ::ng-deep .dark-card.p-card {
+  background: #171F38;
+  color: white;
+  margin: 5px;
+
+  .p-card-subtitle {
+    color: white;
+  }
+}
+
+:host ::ng-deep .dark-dataview.p-dataview {
+
+  .p-dataview-content,
+  .p-paginator {
+    background: transparent;
+  }
+
+  .p-paginator .p-paginator-first,
+  .p-paginator .p-paginator-prev,
+  .p-paginator .p-paginator-next,
+  .p-paginator .p-paginator-last,
+  .p-paginator .p-paginator-pages .p-paginator-page {
+    color: white;
+  }
+
+  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: rgba(63, 81, 181, 0.12);
+    border-color: rgba(63, 81, 181, 0.12);
+  }
+
+  .p-paginator-bottom {
+    border-width: 0 0 0px 0;
+  }
+
+}
+
+:host ::ng-deep .dark-chips.p-chip {
+  background: rgba(116, 116, 116, 0.12);
+  color: white;
+  font-size: 12px;
+  margin: 2px;
+}
+
+:host ::ng-deep .dark-selectButton.p-selectbutton {
+  .p-button {
+    color: white;
+    background: #0E1630;
+    border: 1px solid rgba(0, 0, 0, 0.12)
+  }
+
+  .p-button.p-highlight {
+    background: rgba(116, 116, 116, 0.568);
+    color: white;
+  }
+}
+
+
+// Light Theme
+:host ::ng-deep .light-toolbar.p-toolbar {
+  position: fixed;
+  border: 0px;
+  width: 100%;
+  z-index: 100;
+  background: #ffff;
+  padding: 0px 15px;
+  box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2);
+
+  h5,
+  i,
+  a {
+    color: #252525;
+  }
+
+  .toolbar-button:before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #EB4A4A;
+    z-index: -1;
+
+  }
+}
+
+:host ::ng-deep .light-button.p-button {
+  background: transparent;
+
+  .p-button-label {
+    color: #8444dc;
+  }
+}
+
+:host ::ng-deep .light-menuButton.p-button {
+  color: #0E1630;
+  background: transparent;
+}
+
+:host ::ng-deep .light-menuButton.p-menu {
+  border: none;
+
+  .p-submenu-header {
+    display: none;
+  }
+}
+
+:host ::ng-deep .light-menuButton.p-sidebar {
+  .p-sidebar-header {
+    color: #9e9e9e;
+  }
+
+  .p-sidebar-close-icon {
+    color: #0E1630;
+  }
+}
+
+:host ::ng-deep .light-card.p-card {
+  background: white;
+  color: #252525;
+  margin: 5px;
+
+  .p-card-subtitle {
+    color: #252525;
+  }
+}
+
+
+:host ::ng-deep .light-dataview.p-dataview {
+
+  .p-dataview-content,
+  .p-paginator {
+    background: transparent;
+  }
+
+  .p-paginator-bottom {
+    border-width: 0 0 0px 0;
+  }
+}
+
+:host ::ng-deep .light-chips.p-chip {
+  color: #252525;
+  font-size: 12px;
+  margin: 2px;
+}
+
+:host ::ng-deep .light-selectButton.p-selectbutton {
+  color: #252525;
+  font-size: 12px;
+}
+
+.p-grid {
+  width: 100%;
+}
+
+.bio {
+  display: flex;
+}
+
+.projects {
+  padding-top: 2%;
+  max-width: 100vw;
+}
+
+.buttons-mobile {
+  display: none;
+}
+
+// Media queries
+@media (max-width:750px) {
+
+  .proj-exp {
+    width: 100%;
+  }
+
+  .buttons-web {
+    display: none;
+  }
+
+  .buttons-mobile {
+    display: block;
+  }
+}

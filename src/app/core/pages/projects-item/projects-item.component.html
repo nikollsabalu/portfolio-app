@@ -1,0 +1,34 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div *ngIf="!isLoading">
+  <div class="container">
+    <a [routerLink]="['/']" icon="pi pi-arrow-left" pButton pRipple type="button" label="Back" class="p-button-text"
+      id="back-arrow"></a>
+    <h1>{{project['nombre']}}</h1>
+
+    <div class="p-grid">
+      <div class="p-col-8 item">
+        <img [alt]="project.nombre" [src]="project['portada']" class="image">
+        <strong>Main features:</strong>
+        <p *ngFor="let caracteristica of project['caracteristicas']">
+          <i class="pi pi-minus"></i>
+          {{ caracteristica }}
+        </p>
+        <br>
+
+      </div>
+
+      <div class="p-col-4 item">
+        <p class="description">{{project.longDescripcion}}</p>
+        <br>
+        <strong>Developed with the following technologies</strong>
+        <p *ngFor="let tech of project['tecnologias']">
+          <i class="pi pi-angle-right"></i> {{ tech.nombre }}
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

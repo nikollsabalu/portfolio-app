@@ -1,0 +1,52 @@
+.container {
+  padding: 5%;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.image {
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+.features {
+  display: flex;
+}
+
+.description {
+  text-align: justify;
+}
+
+:host ::ng-deep .p-menu {
+  padding: 0rem 0;
+  width: 6rem;
+  background-color: transparent;
+
+  border-radius: 25px;
+  border-width: 0px;
+  color: #8444dc;
+
+  .p-menuitem-link,
+  .p-menuitem-text,
+  .p-menuitem-icon,
+  .p-menuitem-link-active {
+    color: #EB4A4A;
+  }
+
+}
+
+::ng-deep .p-button.p-button-text {
+  color: #fff;
+}
+
+// Media queries
+@media (max-width:600px) {
+
+  .item {
+    width: 100%;
+  }
+}

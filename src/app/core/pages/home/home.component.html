@@ -1,0 +1,43 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div *ngIf="!isLoading">
+  <p-toolbar [styleClass]="toolbarStyle">
+    <div class="p-toolbar-group-left">
+      <h5 class="p-mr-2"><i class="pi pi-moon"></i> Dark mode </h5>
+      <p-inputSwitch (onChange)="changeTheme()" [(ngModel)]="checked"></p-inputSwitch>
+    </div>
+
+    <div class="p-toolbar-group-right">
+
+      <!-- Mobile only -->
+      <div class="buttons-mobile">
+        <p-sidebar [styleClass]="menuButtonStyle" id="sidebar" [(visible)]="visibleSidebar" position="right"
+          [baseZIndex]="100" [modal]="false">
+          <p-menu [styleClass]="menuButtonStyle" [model]="items" [baseZIndex]="1000" (click)="closeSidebar()"></p-menu>
+
+        </p-sidebar>
+        <p-button [styleClass]="menuButtonStyle" type="button" class="p-mr-2"
+          (click)="visibleSidebar = true; openSidebar()" icon="pi pi-bars"></p-button>
+      </div>
+
+      <!-- Web Only -->
+      <div class="buttons-web">
+        <a href="#about" pButton pRipple type="button" label="About me"
+          class="p-button p-button-primary  p-button-text toolbar-button" id="btnAbout" (click)="addStyle('btnAbout')"></a>
+        <a href="#projects" pButton pRipple type="button" label="Projects"
+          class="p-button p-button-primary  p-button-text toolbar-button" id="btnProject" (click)="addStyle('btnProject')"></a>
+        <a href="#experience" pButton pRipple type="button" label="Experience"
+          class="p-button p-button-primary  p-button-text toolbar-button" id="btnExperience" (click)="addStyle('btnExperience')"></a>
+      </div>
+    </div>
+  </p-toolbar>
+
+  <app-about id="about" [bodyPie]="toolbarStyle" [cardStyle]="cardStyle" [chipStyle]="chipStyle"
+    [claseButton]="claseButton"></app-about>
+  <div class="p-grid projects">
+    <app-experience id="experience" class="p-col-4 proj-exp" [cardStyle]="cardStyle"></app-experience>
+    <app-projects id="projects" class="p-col-8 proj-exp" [cardStyle]="cardStyle" [dataviewStyle]="dataviewStyle"
+      [chipStyle]="chipStyle" [selectButtonStyle]="selectButtonStyle"></app-projects>
+  </div>
+  <app-footer></app-footer>
+</div>

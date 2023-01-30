@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0px;
+  font-family: var(--font-family);
+  background-color: #eeeeee;
+  color: #252525;
+  scroll-behavior: smooth;
+}
+
+body p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background: #252525ad;
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background-color: #252525ad;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #252525ad;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.p-dialog-content::-webkit-scrollbar {
+  display: none;
+}
+
+.dark-theme {
+  margin: 0px;
+  background-color: #0E1630;
+  min-height: 100vh;
+  color: white;
+  position: absolute;
+  width: 100%;
+
+}

@@ -1,0 +1,116 @@
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.container {
+  padding: 20px;
+  width: 100%
+}
+
+.container-projects {
+  text-align: center;
+}
+
+.projects-title {
+  margin-bottom: 5px;
+}
+
+.chips {
+  padding: 10px;
+}
+
+.list-img {
+  width: 100%;
+}
+
+.flex-list {
+  display: flex;
+}
+
+#project-web {
+  display: block;
+}
+
+#project-mobile {
+  display: none;
+}
+
+::ng-deep .p-paginator {
+  width: 100%;
+  padding: 0px;
+}
+
+:host ::ng-deep .p-menu {
+  padding: 0rem 0;
+  width: 6rem;
+  background-color: #8444dc;
+  border-radius: 25px;
+  border-width: 0px;
+
+  .p-menuitem-link,
+  .p-menuitem-text {
+    color: white;
+  }
+}
+
+.btn-github {
+  display: flex;
+}
+
+.card-filter,
+.projects-cabecera {
+  display: flex;
+  align-items: center;
+}
+
+.card-filter {
+  justify-content: space-between;
+}
+
+::ng-deep .p-badge {
+  background: #EB4A4A;
+}
+
+::ng-deep .p-button.p-button-outlined {
+  background-color: transparent;
+  color: #EB4A4A;
+  border: 1px solid;
+}
+
+::ng-deep .p-button {
+  color: white;
+  background: #EB4A4A;
+}
+
+::ng-deep .p-card .p-card-content {
+  padding: 0rem 0;
+}
+
+// Media Queries
+@media (max-width:400px) {
+  .chips {
+    padding: 5px 0px;
+  }
+}
+
+@media (max-width:600px) {
+
+  .card-filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+  }
+
+  #project-web {
+    display: none;
+  }
+
+  #project-mobile {
+    display: block;
+  }
+}

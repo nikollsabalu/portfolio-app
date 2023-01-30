@@ -1,0 +1,79 @@
+<div class="container dark-body">
+
+  <div class="projects-title">
+    <p-card [styleClass]="cardStyle">
+
+      <div class="card-filter">
+        <div class="projects-cabecera">
+          <h3>Projects</h3>
+          <p-badge [value]="projects.length" styleClass="p-ml-2" severity="primary"></p-badge>
+        </div>
+        <p-selectButton [styleClass]="selectButtonStyle" class="p-ml-5" optionValue="value" [options]="filters"
+          [(ngModel)]="defaultValue" (click)="filterProjects(defaultValue)">
+        </p-selectButton>
+      </div>
+    </p-card>
+  </div>
+
+  <p-dataView id="project-web" #dw [value]="projects" [paginator]="true" [rows]="2" [sortField]="campo"
+    [sortOrder]="order" layout="grid" [styleClass]="dataviewStyle">
+
+    <ng-template let-project pTemplate="gridItem">
+
+      <div class="p-col-6">
+        <p-card [header]="project.nombre" [subheader]="project.descripcion" [styleClass]="cardStyle">
+          <ng-template pTemplate="header">
+            <img alt="Card" [src]="project.portada">
+            <div class="chips">
+              <p-chip *ngFor="let tech of project.tecnologias" [label]="tech.nombre" [styleClass]="chipStyle">
+                <i class="pi pi-angle-right"></i>
+              </p-chip>
+            </div>
+          </ng-template>
+
+          <ng-template pTemplate="footer">
+
+            <div class="btn-github">
+              <a pButton pRipple type="button" label="View more" class="p-button-rounded"
+                (click)="viewProjectDetail(project.id)"></a>
+              <a target="_blank" icon="pi pi-github" pButton pRipple type="button" label="Github"
+                [style]="{'margin-left': '.7em'}" class="p-button-rounded p-button-outlined"></a>
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
+
+    </ng-template>
+  </p-dataView>
+
+  <p-dataView id="project-mobile" #dm [value]="projects" [paginator]="true" [rows]="2" [sortField]="campo"
+    [sortOrder]="order" layout="grid" [styleClass]="dataviewStyle">
+
+    <ng-template let-project pTemplate="gridItem">
+      <div class="p-col-12">
+
+        <p-card [header]="project.nombre" [subheader]="project.desCorta" [styleClass]="cardStyle">
+          <div class="chips">
+            <p-chip *ngFor="let tech of project.tecnologias" [label]="tech.nombre" [styleClass]="chipStyle">
+              <i class="pi pi-angle-right"></i>
+            </p-chip>
+          </div>
+
+          <div class="flex-list">
+            <img class="list-img" alt="Card" [src]="project.portada">
+          </div>
+
+          <br>
+
+          <div class="btn-github">
+            <a pButton pRipple type="button" label="View more" class="p-button-rounded"
+              (click)="viewProjectDetail(project.id)"></a>
+            <a [href]="project.githubUrl" target="_blank" icon="pi pi-github" pButton pRipple type="button"
+              label="Ver en Github" [style]="{'margin-left': '.7em'}" class="p-button-rounded p-button-outlined"></a>
+          </div>
+        </p-card>
+
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>

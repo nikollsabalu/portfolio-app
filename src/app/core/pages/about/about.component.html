@@ -1,0 +1,81 @@
+<div class="container p-grid">
+
+  <!-- About-->
+  <div class="p-col-4 about">
+    <p-card [header]="bio['nombre']" [subheader]="bio['profesion']" [styleClass]="cardStyle">
+      <ng-template pTemplate="header">
+        <img alt="Foto de perfil" [src]="bio['imagen']" class="imagen" style="padding: 10px 20px;">
+      </ng-template>
+      <p class="bio-description"> {{bio['descripcion']}}</p>
+      <p class="bio-description"> <i class="pi pi-phone"></i> &nbsp; {{bio['telefono']}}</p>
+      <p class="bio-description"> <i class="pi pi-envelope"></i> &nbsp; {{bio['correo']}}</p>
+    </p-card>
+  </div>
+
+  <!-- Technologies -->
+  <div class="p-col-4 about">
+
+    <p-card header="Front-end Skills" [styleClass]="cardStyle">
+      <div class="p-grid">
+        <div *ngFor="let tech of mainTechnologies" class="p-col-12 card-tecnologias">
+          <h5>{{tech.nombre}}</h5>
+          <div class="progress">
+            <p-tag class="tag-progressbar" styleClass="p-mr-2" severity="success" [value]="tech.nivel / 100 | percent"
+              [rounded]="true"></p-tag>
+
+            <p-progressBar class="progressbar" mode="determinate" [value]="tech.nivel" [showValue]="false">
+            </p-progressBar>
+          </div>
+        </div>
+      </div>
+    </p-card>
+
+    <br>
+    <p-card header="Design Skills" [styleClass]="cardStyle">
+
+      <div class="p-grid">
+        <div *ngFor="let design of technologiesDesign" class="p-col-12">
+          <h5>{{design.nombre}}</h5>
+
+          <div class="progress">
+            <p-tag class="tag-progressbar" styleClass="p-mr-2" severity="success" [value]="design.nivel / 100 | percent"
+              [rounded]="true"></p-tag>
+
+            <p-progressBar class="progressbar" mode="determinate" [value]="design.nivel" [showValue]="false">
+            </p-progressBar>
+
+          </div>
+        </div>
+      </div>
+    </p-card>
+
+    <div class="p-grid container-technologies" class="p-col-12">
+      <div>
+        <h4>Other technologies</h4>
+      </div>
+      <div class="chips">
+        <p-chip *ngFor="let tech of secondTechnologies" [label]="tech" [styleClass]="chipStyle"></p-chip>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses -->
+  <div class="card-container p-col-4 courses">
+
+    <p-card header="Education" subheader="& courses" [styleClass]="cardStyle">
+
+      <div class="card">
+        <p-timeline [value]="courses" align="alternate">
+          <ng-template pTemplate="content" let-event>
+            <strong>{{event.desc}}</strong>
+            <p>{{event.date}}</p>
+            <p>{{event.status}}</p>
+
+          </ng-template>
+
+        </p-timeline>
+      </div>
+    </p-card>
+  </div>
+
+</div>
